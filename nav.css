@@ -79,6 +79,7 @@
 }
 
 
+/* NAVBAR LINKS */
 
 a:link {
     color: white;
@@ -87,12 +88,14 @@ a:link {
 
 a:visited {
     text-decoration: none;
+    color: white;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: gray;
 }
 
 a:active {
-    text-decoration: underline;
+    text-decoration: none;
 }
