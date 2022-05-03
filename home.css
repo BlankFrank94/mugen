@@ -1,1 +1,36 @@
 @import 'nav.css';
+
+body {
+    background-color: black;
+}
+
+p {
+    color: white;
+}
+
+.hero-section{
+    width: 100%;
+    height: calc(100vh - 120px);
+   
+    /* INFINITY/LOTUS GIF BACKGROUND GOES HERE
+    background-image: url('../img/header.png'); */
+    
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section .logo{
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
+.hero-section .sub-heading{
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+}
