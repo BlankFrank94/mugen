@@ -1,75 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mugen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="product.css">
     <link rel="stylesheet" href="home.css">
+
 </head>
+
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar"></nav>
-    <script src="./nav.js"></script>
+    <nav class="navbar">
+       <ul class="nav-left">
+        <li><h1><a id="logo" href="./index.html">mugen</a></h1></li>
+       </ul>
+       <ul class="nav-right">
+            <li><a href="#">decor</a></li>
+            <li> <a href="#">apparel</a></li>
+            <li><a href="#">infinity.fm</a></li>
+            <li><a href="#"><img src="img/cart.png" alt="shopping-cart"></a></li>
+       </ul>
+    </nav>
+    
 
     <!-- PRODUCTS -->
-<!-- <section class="product">
-    <h2 class="product-category">decor</h2>
-    <div class="product-container">
-        <div class="product-card">
-            <div class="product-image">
-                PRODUCT IMAGE
-                <img src="data:image/png;base64,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" class="product-thumb" alt="">
-                <button class="card-btn">add to cart</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Son Goku Headphone Stand</h2>
-                <p class="product-short-des">Custom Resin Headphone Stand.</p>
-                <span class="price">$120</span>
-            </div>
+    <div class="card bg-dark text-white">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOwAAACFCAMAAABv9uS0AAAAM1BMVEXMzMzPz8/JycmRkZGUlJS5ubmOjo7BwcGysrLGxsadnZ2lpaWYmJi9vb22traoqKiIiIhISoDgAAAEMUlEQVR4nO2b647jNgyFRVoX6r7v/7QlpTjxTGdn+qeItz1fgMRSJMFHvIgOEOcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOCPgPnLFn/s/3Iif934ceaboDRLmYnOdmjDromllNrpu5mj2szdYG3Usa9tReHvpr6L3I4Yj/I0Z41C69O6W/r9LdM41pC+WtPrtV/7lIr11xuKpXKUnmqc+95MwRIrKjRVX38/UXdp6pCj6HAKOi2Lb7ZnJdYc2l7mVlCIhYm4+G1a9vsuuflMRMWH85bpcfFsj0M3iFyN6sjkbSDJMYh6VKNS8uV2cUt1uR5JyaspbS6xPU5r9ijnyNR5f+RHx4x5uUAMRClWtvAvQlQPi3Sq7duAfwdcdlhyNilqDwkmlkyCfb9EGDS97PEPDVx/rUQ2TKw8nFZXobb2TQ0/biaWUmvkej9T5zzcFjv92gMqT2fMGsS6Ca8ozjsPi7qx+kcntflydb/3J72c4iZQ9zW1GNs+NEzoFqsGX9/XdnqtGrtSLvHDkcI8vCYo848Zo6/q2PnY28ErEO4EBV+LL8Vvn1M7nmIfMVz9Kdap0CRn1t6kqrk8L+eeRynNdOZzSJw3y1A0fCud7dBYYabht8W2h9j5EqsuXNrT0IvU/NHELOubZO5FF7iz2OZXwlkp1Azz2bIXdSrJj0/zteCKyU6unbx1hXxssXxHsWV/qkTx3bHFrWMV+UhQF7Fm2ktFtQ/eddzyeR774vgVs3cT21tZorqKLa3WOqvXGveZjdulNDDLvjIs91Unaj4vxHX7B1klcd9snB5izXk1K0crdo9fdZ2eNuB5zpphj2vMnjOzftJLbH5EgK5wt3PW8qjVQWrJThuTTS4tZ9Ri8mUerYVZXvU9l7h9wk9SZRaoWpPUsx6h8t1DxHtQc02tjbW2OCulsIuhohmLuL3umKYK0uMnnx3TCmH1YNOWD41mWl26T1Ztd19vFrIKH34OKfF8RjnFDj1TxuWph54V1DmwNx2hQyzDkR6zMqYdYJbZq654u2rR7Yez5uNLVDifZ6M+AF1O2bo8Wn35fA5Sf/VNh6w8xeXQ4cfyg9TWivfTun+pqOF1Z1l2zWu/Q1wKvixjPSp0Cc+ZoV5+kZBS5r62HzmuK96JlZauzUu/+1v/tfPDzE/X/869AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/jdQoJx/HvbnQWMMTo7t36vZZXvjPCiFzOwyDed6mElSkvUP3TEyy+DJ/W5/D/onUAjSQw4hJJlZ9C30rmJHT/oibQQaFGR0FUu5k7Y4iYTx89q3g0JSpTmIuNFZaKTeu5DZMk2ikHNwooN6CkmNL5ltH/Tb8PPa94PX/4vZ3Lfrm+uOk7lyop7Wt+rN64PVtvrGLiXtcf+toOb07jsA7+MvQKAhVcIo28wAAAAASUVORK5CYII=" class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title">"Son-Kun" Headphone Stand</h5>
+          <p class="card-text">Custom Resin 3D printed headphone stand.</p>
+          <p class="card-text">$129.99</p>
+          <a href="#" class="btn btn-dark">Add to Cart</a>
         </div>
-    </div>
-</section> -->
-
-<!-- PRODUCT DETAILS -->
-<section class="product-details">
-    <div class="image-slider">
-        <div class="product-images">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIMAAACDCAMAAACZQ1hUAAAAZlBMVEXX19fY2NjPz8/T09Ovr6/c3Nyzs7Pj4+OqqqrHx8fKyspfX19QUFC8vLzf399sbGxVVVVycnJaWlo/Pz9kZGSAgICcnJwtLS1ISEiioqKJiYkoKCiQkJAzMzN5eXk5OTkVFRUAAABhz+MsAAAFmUlEQVR4nM1ce2OrLA83YERQxCtTZ+3zfv8v+QZtz7az7qz1in90Vin5kRsBkgURg+DMC1gUsHNBEATmPvh5IIBPLAAWngYC+I32n5vzIJwH4gtd4PEJIP6iSogOt45vegiHm+gDikdbx0POk3SC40BA8FADIThOJ4jrjwd8nE78g9JROvFPKzzGT/xC5QiP+SuN/Z3VEwLfWyeeGuRtRt8LwnPRyp4m+nTfwGLYBwRA/OzwXmj6GoRXBrePOF7sdQ8QL/e5vYku8Dxbu+1F/W3rMRfydUtxLB7QdpxYMZytrGNVP9uIYyU/twh0fwhfX+pgpTjIQa8dxlqd2ESn1u1PbBSNrPGYm3nb5YHuhiHyUoZuus20zE9sHKMv6W7z6f91E9shDPpxpfxT+z1W8a+53J12M16xjt02Xp+X8I7LpGc1fcPgBxHckgTEz/uYIL79KsNbK7pbCwF1FEWaA/CEfQLxZYQg828gjL45aDB6LTPEW54kZaKAp5/IfhUHyOobhiS66QKUG2BgQmBTZ18w/LXH/B0D1Pb2HpINMEigYf8nZgxwX63eTxwmVSEMHy+mJzzXOH+ZMdxeU1cLAE0YUL5PGACZYnPfjCmyfeT0HRwGpvj0At0NASwJw9Q8cxgwUPRrGgv9YAkGhciSxskCZVGVV0udM9OW7RBC19bXkaOsuiqtIiISjBW9gJjXGgGbqqwsYcCozduawJY2vaqXOSHay/Vy7XHSSRYJIVKNWHWZYDZoDBdiqFFeGiHkOw28Hkh7CiKXEIaxyYQY3zTqNpjaYZ1z8bowxEUH3InTYUDQcWzCLCQiznGkVjEmcynd4LILMaQkK2ZxNWFgF8d+0gwxWs4Yf+dYxkuchdOHWctIFqyo+6EMM9tMXeF7nRhjSjnZRUY0tHG6wC4zhjdnLVhoUdfUzKQcZ01dgsH9nTA0DaBoiA9m5kOreey484EhcfMqv9744FoFpRamc6RJQXK5FkNmrCATiRCqGFHFaA3HKGzwjgGgHiIkqLM+FD0i9hdNKskz1A1uwQeZF4UZO0RZm7HsMeiTsW67Dwz0gp40weQVICjqMenJT6ItR5OHSzGg5rc7TV8YTR2K9I+UUyvnAJTWMuKB6xr15LjogRMBTTH0WmoyCrpDekz+Y3q64ILPNzBdQfDh+JzFhJN7co6LHPgfj3hvBfcffu5s6+seqhx/IPcFhAt0jzyEegTCBbqHHsY9AsEjeWbewAxCWnk2hPP54IE+eGAXHviHj0D/tHSWz4TPyJ8I/l4CH5ddNM9EU3R13wq4fXMT2CHW4eJzCJSiT6ZmksBdaM+U5Mg6vnqB+TuEqCxS3qdjoeI0HdExQKWm1LIajdJ5UVLANrFlRwxdnDW2DzPMKssq5eiFXTY0shaYJXHWF8QNQkBC4r93t+wCEGXUpEbjO8/6IVExMUM0g3wzIc8pnipzU6Zap6Ifdjspxn5ELXVlW8RhkLQqx8wmoCJW2RJBJe1AoSfaotxNHkArJgrs0XSXICtibAvEuKRVJmaRyRlGpuURTxT7n91LO9HmUqlGd61OYnkJht7E+ioVt1YVcTHwwiaN7E1Qd8vC6CcuKExhurBNukwWdShHZI17ZJmpe+SFGYJ0MEVkrdDNXkpJYkBiNrrYHkkC4P7g/Gf+aGFqAbijef4yTUPtpvJ9J7Bfj0TEU61WQTh8f/IBhNP3aT3Yr/Zg396D8wsPznE8OM/y4FzPg/NND855PTjv9uDc34P8Bw/yQDzIh/EgL8iD/CgP8sQ8yJfzIG/Qg/xJD/JIPcin9SCv2IP8ag/yzD3It/eg7sCD+gsP6lA8qMfxoC7puPqsf5SInV6n5kG9ngd1ix7Ub3pQx+pBPa8Hdc0e1Hd7UOd+HoQ/tE9NJLm5bR/+/8OpuSwTiPD/MSk5jkibudEAAAAASUVORK5CYII=" class="active" alt="">
-            <img src="data:image/png;base64,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" alt="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIMAAACDCAMAAACZQ1hUAAAAZlBMVEXX19fY2NjPz8/T09Ovr6/c3Nyzs7Pj4+OqqqrHx8fKyspfX19QUFC8vLzf399sbGxVVVVycnJaWlo/Pz9kZGSAgICcnJwtLS1ISEiioqKJiYkoKCiQkJAzMzN5eXk5OTkVFRUAAABhz+MsAAAFmUlEQVR4nM1ce2OrLA83YERQxCtTZ+3zfv8v+QZtz7az7qz1in90Vin5kRsBkgURg+DMC1gUsHNBEATmPvh5IIBPLAAWngYC+I32n5vzIJwH4gtd4PEJIP6iSogOt45vegiHm+gDikdbx0POk3SC40BA8FADIThOJ4jrjwd8nE78g9JROvFPKzzGT/xC5QiP+SuN/Z3VEwLfWyeeGuRtRt8LwnPRyp4m+nTfwGLYBwRA/OzwXmj6GoRXBrePOF7sdQ8QL/e5vYku8Dxbu+1F/W3rMRfydUtxLB7QdpxYMZytrGNVP9uIYyU/twh0fwhfX+pgpTjIQa8dxlqd2ESn1u1PbBSNrPGYm3nb5YHuhiHyUoZuus20zE9sHKMv6W7z6f91E9shDPpxpfxT+z1W8a+53J12M16xjt02Xp+X8I7LpGc1fcPgBxHckgTEz/uYIL79KsNbK7pbCwF1FEWaA/CEfQLxZYQg828gjL45aDB6LTPEW54kZaKAp5/IfhUHyOobhiS66QKUG2BgQmBTZ18w/LXH/B0D1Pb2HpINMEigYf8nZgxwX63eTxwmVSEMHy+mJzzXOH+ZMdxeU1cLAE0YUL5PGACZYnPfjCmyfeT0HRwGpvj0At0NASwJw9Q8cxgwUPRrGgv9YAkGhciSxskCZVGVV0udM9OW7RBC19bXkaOsuiqtIiISjBW9gJjXGgGbqqwsYcCozduawJY2vaqXOSHay/Vy7XHSSRYJIVKNWHWZYDZoDBdiqFFeGiHkOw28Hkh7CiKXEIaxyYQY3zTqNpjaYZ1z8bowxEUH3InTYUDQcWzCLCQiznGkVjEmcynd4LILMaQkK2ZxNWFgF8d+0gwxWs4Yf+dYxkuchdOHWctIFqyo+6EMM9tMXeF7nRhjSjnZRUY0tHG6wC4zhjdnLVhoUdfUzKQcZ01dgsH9nTA0DaBoiA9m5kOreey484EhcfMqv9744FoFpRamc6RJQXK5FkNmrCATiRCqGFHFaA3HKGzwjgGgHiIkqLM+FD0i9hdNKskz1A1uwQeZF4UZO0RZm7HsMeiTsW67Dwz0gp40weQVICjqMenJT6ItR5OHSzGg5rc7TV8YTR2K9I+UUyvnAJTWMuKB6xr15LjogRMBTTH0WmoyCrpDekz+Y3q64ILPNzBdQfDh+JzFhJN7co6LHPgfj3hvBfcffu5s6+seqhx/IPcFhAt0jzyEegTCBbqHHsY9AsEjeWbewAxCWnk2hPP54IE+eGAXHviHj0D/tHSWz4TPyJ8I/l4CH5ddNM9EU3R13wq4fXMT2CHW4eJzCJSiT6ZmksBdaM+U5Mg6vnqB+TuEqCxS3qdjoeI0HdExQKWm1LIajdJ5UVLANrFlRwxdnDW2DzPMKssq5eiFXTY0shaYJXHWF8QNQkBC4r93t+wCEGXUpEbjO8/6IVExMUM0g3wzIc8pnipzU6Zap6Ifdjspxn5ELXVlW8RhkLQqx8wmoCJW2RJBJe1AoSfaotxNHkArJgrs0XSXICtibAvEuKRVJmaRyRlGpuURTxT7n91LO9HmUqlGd61OYnkJht7E+ioVt1YVcTHwwiaN7E1Qd8vC6CcuKExhurBNukwWdShHZI17ZJmpe+SFGYJ0MEVkrdDNXkpJYkBiNrrYHkkC4P7g/Gf+aGFqAbijef4yTUPtpvJ9J7Bfj0TEU61WQTh8f/IBhNP3aT3Yr/Zg396D8wsPznE8OM/y4FzPg/NND855PTjv9uDc34P8Bw/yQDzIh/EgL8iD/CgP8sQ8yJfzIG/Qg/xJD/JIPcin9SCv2IP8ag/yzD3It/eg7sCD+gsP6lA8qMfxoC7puPqsf5SInV6n5kG9ngd1ix7Ub3pQx+pBPa8Hdc0e1Hd7UOd+HoQ/tE9NJLm5bR/+/8OpuSwTiPD/MSk5jkibudEAAAAASUVORK5CYII=" alt="">
-            <img src="data:image/png;base64,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" alt="">
+      </div>
+      <div class="card-group">
+        <div class="card">
+          <img src="data:image/png;base64,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" class="card-img-top" alt="...">
         </div>
-        <div class="details">
-            <h2 class="product-brand">Son Goku Headphone Stand</h2>
-            <p class="product-short-des">Custom Resin Printed Headphone Stand. Made to order.</p>
-            <span class="product-price">$129</span>
-         
-            <!-- CHANGE TO QUANTITY SELECTOR
-            <p class="product-sub-heading">select size</p> -->
+        <div class="card">
+          <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+        </div>
+        <div class="card">
+          <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+        </div>
+      </div>
     
-            <!-- <input type="radio" name="size" value="s" checked hidden id="s-size">
-            <label for="s-size" class="size-radio-btn check">s</label>
-            <input type="radio" name="size" value="m" hidden id="m-size">
-            <label for="m-size" class="size-radio-btn">m</label>
-            <input type="radio" name="size" value="l" hidden id="l-size">
-            <label for="l-size" class="size-radio-btn">l</label>
-            <input type="radio" name="size" value="xl" hidden id="xl-size">
-            <label for="xl-size" class="size-radio-btn">xl</label>
-            <input type="radio" name="size" value="xxl" hidden id="xxl-size">
-            <label for="xxl-size" class="size-radio-btn">xxl</label> -->
     
-            <button class="btn cart-btn">add to cart</button>
-           
+    <!-- <div class="card text-white bg-secondary" style="width: 18rem;">
+        <img src="data:image/png;base64,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" class="card-img-top" alt="placeholder">
+        <div class="card-body">
+          <h5 class="card-title">"Son-Kun" Headphone Stand</h5>
+          <p class="card-text">Custom Resin 3D printed headphone stand.</p>
+          <p>Length: __in, Width: __in, Height: __in.</p> 
+          <p>$129.99</p>
+          <a href="#" class="btn btn-dark">Add to Cart</a>
         </div>
-    </div>
-</section>
+      </div> -->
 
-<!-- FOOTER -->
-    <footer></footer>
-    <script src="./footer.js"></script>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+       
+        <div class="footer-social-container">
+            <!-- <p class="footer-credit">Mugen</p> -->
+            <div>
+                <a href="#" class="social-link">terms of service</a>
+                <a href="#" class="social-link">privacy page</a>
+            </div>
+            <div>
+                <a href="#" class="social-link">instagram</a>
+                <a href="#" class="social-link">twitter</a>
+                <a href="#" class="social-link">tiktok</a>
+            </div>
+        </div>
+        
+    </footer>
+   
 
 
 </body>

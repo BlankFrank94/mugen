@@ -12,6 +12,7 @@
     width: 100%;
     background: black;
     z-index: 9;
+    display: flex;
 }
 
 .nav{
@@ -98,4 +99,22 @@ a:hover {
 
 a:active {
     text-decoration: none;
+}
+
+.nav-left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-right: 24px;
+    font-size: large;
+}
+
+ul {
+    list-style: none;
 }
