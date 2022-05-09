@@ -1,6 +1,11 @@
 @import "nav.css";
 @import "footer.css";
 
+.card {
+    margin: 40px 20px;
+}
+
+
 /* body {
   background-color: black;
   min-height: 100vh;
